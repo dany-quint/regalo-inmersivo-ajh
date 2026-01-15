@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Capítulo X — Título</title>
+
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/animations.css" />
+  <link rel="stylesheet" href="../css/chapters.css" />
+</head>
+
+<body>
+  <!-- Fondo vivo -->
+  <div class="bg-ambient">
+    <canvas class="particles" data-particles></canvas>
+  </div>
+
+  <main class="container section chapter">
+    <!-- Nav mini -->
+    <div class="chapter-top">
+      <a class="btn ghost" href="../index.html#mapa">← Volver al mapa</a>
+      <div class="chapter-progress">
+        <span class="chip">Capítulo X/8</span>
+      </div>
+    </div>
+
+    <!-- Card principal -->
+    <article class="chapter-card">
+      <header class="chapter-header">
+        <span class="chip">Tema</span>
+        <h1 class="chapter-title">Título del capítulo</h1>
+        <p class="chapter-subtitle">Frase cortita (poética) que resume el capítulo.</p>
+      </header>
+
+      <!-- Narración -->
+      <section class="chapter-story">
+        <p>
+          Aquí va tu narración (5–8 líneas). Escríbela como carta.
+        </p>
+      </section>
+
+      <!-- Verdad central -->
+      <section class="chapter-truth">
+        <h2>Verdad central</h2>
+        <p>“Aquí Dios fue fiel porque…”</p>
+      </section>
+
+      <!-- Interacción WOW -->
+      <section class="chapter-wow">
+        <button class="btn primary" type="button" data-open-letter>
+          Abrir carta ✉️
+        </button>
+
+        <div class="letter" data-letter hidden>
+          <p><strong>Versículo / promesa:</strong> (aquí)</p>
+          <p>Mensaje bonito corto.</p>
+        </div>
+      </section>
+
+      <!-- Navegación -->
+      <footer class="chapter-actions">
+        <a class="btn" href="chapter-(X-1).html">← Anterior</a>
+        <a class="btn primary" href="chapter-(X+1).html">Siguiente →</a>
+      </footer>
+    </article>
+  </main>
+
+  <script src="../js/animations.js"></script>
+  <script src="../js/interactions.js"></script>
+</body>
+</html>
