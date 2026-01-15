@@ -112,3 +112,47 @@
   filter: saturate(.9) blur(.15px);
   opacity: .22;
 }
+
+/* === Upgrade: movimiento + desvanecimiento + rotación suave === */
+
+.sticker{
+  /* Mantén tus props actuales y agrega estas (o reemplaza si se repiten) */
+  opacity: .16;
+  animation:
+    driftY 26s linear infinite,
+    sway 7s ease-in-out infinite,
+    fadeInOut 8.5s ease-in-out infinite;
+}
+
+/* Cada sticker con un “ritmo” distinto (se siente natural) */
+.s1{ animation-delay: 0s, 0s, 1.2s; }
+.s2{ animation-delay: 0s, 0s, 2.6s; }
+.s3{ animation-delay: 0s, 0s, 3.8s; }
+.s4{ animation-delay: 0s, 0s, 1.9s; }
+.s5{ animation-delay: 0s, 0s, 4.6s; }
+.s6{ animation-delay: 0s, 0s, 2.2s; }
+
+/* Girasol: gira muuuy suave mientras sube */
+.s5{
+  animation:
+    driftY 34s linear infinite,
+    sway 8s ease-in-out infinite,
+    fadeInOut 9.5s ease-in-out infinite,
+    sunflowerSpin 10s ease-in-out infinite;
+  opacity: .20;
+  filter: saturate(.9) blur(.15px);
+}
+
+/* Desvanecimiento suave */
+@keyframes fadeInOut{
+  0%, 100% { opacity: .06; }
+  15%      { opacity: .18; }
+  50%      { opacity: .14; }
+  85%      { opacity: .19; }
+}
+
+/* Rotación del girasol (nada brusco) */
+@keyframes sunflowerSpin{
+  0%, 100% { transform: rotate(-6deg); }
+  50%      { transform: rotate(6deg); }
+}
