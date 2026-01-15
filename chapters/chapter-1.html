@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Capítulo X — Título</title>
+  <title>Capítulo 1 — Antes del Camino</title>
 
   <link rel="stylesheet" href="../css/base.css" />
   <link rel="stylesheet" href="../css/layout.css" />
@@ -13,64 +13,112 @@
 </head>
 
 <body>
-  <!-- Fondo vivo -->
   <div class="bg-ambient">
-    <canvas class="particles" data-particles></canvas>
+    <canvas id="particles"></canvas>
   </div>
 
-  <main class="container section chapter">
-    <!-- Nav mini -->
+  <!-- Stickers flotantes (misma vibra que portada) -->
+  <div class="floating-stickers" aria-hidden="true">
+    <span class="sticker s1">✦</span>
+    <span class="sticker s2">✧</span>
+    <span class="sticker s3">🐱</span>
+    <span class="sticker s4">🥑</span>
+    <span class="sticker s5">🌻</span>
+    <span class="sticker s6">✨</span>
+  </div>
+
+  <header class="chapter-hero container reveal">
     <div class="chapter-top">
-      <a class="btn ghost" href="../index.html#mapa">← Volver al mapa</a>
-      <div class="chapter-progress">
-        <span class="chip">Capítulo X/8</span>
-      </div>
+      <a class="mini-link" href="../index.html#mapa">← Volver al mapa</a>
+      <span class="chapter-pill">Capítulo 1</span>
     </div>
 
-    <!-- Card principal -->
-    <article class="chapter-card">
-      <header class="chapter-header">
-        <span class="chip">Tema</span>
-        <h1 class="chapter-title">Título del capítulo</h1>
-        <p class="chapter-subtitle">Frase cortita (poética) que resume el capítulo.</p>
-      </header>
+    <h1 class="chapter-title">Antes del Camino</h1>
+    <p class="chapter-subtitle">
+      Cuando todo parecía difícil… Dios ya estaba ahí.
+    </p>
 
-      <!-- Narración -->
-      <section class="chapter-story">
-        <p>
-          Aquí va tu narración (5–8 líneas). Escríbela como carta.
-        </p>
-      </section>
+    <div class="chapter-actions">
+      <a class="btn ghost" href="#carta">Ir a la carta</a>
+      <a class="btn primary" href="chapter-2.html">Continuar →</a>
+    </div>
+  </header>
 
-      <!-- Verdad central -->
-      <section class="chapter-truth">
-        <h2>Verdad central</h2>
-        <p>“Aquí Dios fue fiel porque…”</p>
-      </section>
+  <main class="container section">
+    <section class="chapter-card reveal">
+      <h2 class="section-title">Un inicio que nadie vio… pero Dios sí</h2>
+      <p class="chapter-text">
+        Adelita, antes de cualquier logro visible, hubo días silenciosos.
+        Días donde avanzabas sin aplausos, con dudas, con cansancio… y aun así,
+        diste un paso más. Y eso, aunque el mundo no lo note, el cielo lo celebra.
+      </p>
+      <p class="chapter-text">
+        Este capítulo es para recordar algo simple pero profundo:
+        <strong>tu historia no empezó el día de la graduación</strong>.
+        Empezó cuando decidiste no rendirte, cuando oraste aun sin fuerzas,
+        cuando seguiste caminando aunque no entendías el “cómo”.
+      </p>
+    </section>
 
-      <!-- Interacción WOW -->
-      <section class="chapter-wow">
+    <section class="verse-card reveal">
+      <p class="verse-label">Versículo</p>
+      <p class="verse-text">
+        “Hasta aquí nos ayudó el Señor.”
+      </p>
+      <p class="verse-ref">— 1 Samuel 7:12</p>
+    </section>
+
+    <section id="carta" class="chapter-card reveal">
+      <div class="letter-head">
+        <h2 class="section-title" style="margin:0;">Carta (abre cuando quieras)</h2>
         <button class="btn primary" type="button" data-open-letter>
-          Abrir carta ✉️
+          Abrir / Cerrar
         </button>
+      </div>
 
-        <div class="letter" data-letter hidden>
-          <p><strong>Versículo / promesa:</strong> (aquí)</p>
-          <p>Mensaje bonito corto.</p>
-        </div>
-      </section>
+      <div class="letter letter-body" data-letter hidden>
+        <p>
+          Adelita…<br><br>
+          Si hoy estás leyendo esto, quiero que lo sientas como un abrazo suave:
+          <strong>lo lograste</strong>. Pero más allá del título, más allá de la foto,
+          más allá del “ya está”… quiero recordarte la parte que casi nadie vio.
+        </p>
 
-      <!-- Navegación -->
-      <footer class="chapter-actions">
-        <a class="btn" href="chapter-(X-1).html">← Anterior</a>
-        <a class="btn primary" href="chapter-(X+1).html">Siguiente →</a>
-      </footer>
-    </article>
+        <p>
+          Hubo etapas donde parecía que todo iba lento, donde la mente hacía ruido,
+          donde la presión apretaba… y aun ahí, <strong>Dios te sostuvo</strong>.
+          Aun cuando tú sentías que dabas poquito, Él multiplicaba tu constancia.
+        </p>
+
+        <p>
+          No fue suerte. No fue “solo talento”. Fue gracia.
+          Fue aprender a levantarte otra vez.
+          Fue orar en silencio.
+          Fue seguir caminando aunque el corazón quisiera parar.
+        </p>
+
+        <p>
+          Y por eso hoy digo contigo: <strong>Ebenezer</strong>.
+          Hasta aquí el Señor te ayudó… y si te ayudó hasta aquí,
+          también te guiará hacia lo que viene.
+        </p>
+
+        <p class="letter-sign">
+          Con cariño (y mucha alegría por ti),<br>
+          <strong>Dany</strong> 💛
+        </p>
+      </div>
+    </section>
+
+    <section class="chapter-nav reveal">
+      <a class="btn ghost" href="../index.html#mapa">← Volver al mapa</a>
+      <a class="btn primary" href="chapter-2.html">Capítulo 2 →</a>
+    </section>
   </main>
 
-  <!-- scripts -->
+  <script src="../js/app.js"></script>
   <script src="../js/animations.js"></script>
   <script src="../js/interactions.js"></script>
-  <script src="../js/chapters.js"></script>
+  <script src="../js/reveal.js"></script>
 </body>
 </html>
