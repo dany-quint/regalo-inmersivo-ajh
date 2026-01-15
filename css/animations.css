@@ -51,3 +51,64 @@
   from{ transform: translateY(0); }
   to{ transform: translateY(-120vh); }
 }
+/* Stickers flotantes (suaves, optimizados, no interfieren) */
+.floating-stickers{
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1; /* detrás del contenido */
+  overflow: hidden;
+}
+
+.sticker{
+  position: absolute;
+  font-size: 22px;
+  opacity: .18;
+  filter: blur(.2px);
+  transform: translate3d(0,0,0);
+  animation: driftY 24s linear infinite, sway 6s ease-in-out infinite;
+  user-select: none;
+  will-change: transform;
+}
+
+/* Tamaños variados */
+.s1{ font-size: 18px; }
+.s2{ font-size: 16px; }
+.s3{ font-size: 26px; }
+.s4{ font-size: 24px; }
+.s5{ font-size: 20px; }
+.s6{ font-size: 18px; }
+
+/* Colores suaves (sin neón) */
+.s1, .s2, .s6{ color: rgba(205,183,246,.85); } /* lavanda */
+.s5{ color: rgba(242,181,212,.85); } /* rosa */
+.s3, .s4{ filter: saturate(.85) blur(.15px); } /* emojis más “soft” */
+
+/* Posiciones iniciales */
+.s1{ left: 10%; top: 110%; animation-duration: 28s; }
+.s2{ left: 85%; top: 120%; animation-duration: 34s; }
+.s3{ left: 20%; top: 130%; animation-duration: 38s; }
+.s4{ left: 70%; top: 115%; animation-duration: 30s; }
+.s5{ left: 45%; top: 125%; animation-duration: 36s; }
+.s6{ left: 60%; top: 140%; animation-duration: 40s; }
+
+/* Animaciones */
+@keyframes driftY{
+  from{ transform: translate3d(0, 0, 0); }
+  to{ transform: translate3d(0, -160vh, 0); }
+}
+@keyframes sway{
+  0%,100%{ margin-left: 0; }
+  50%{ margin-left: 14px; }
+}
+
+/* En móvil: aún más sutil */
+@media (max-width: 820px){
+  .sticker{ opacity: .12; font-size: 18px; }
+}
+
+/* Ajuste especial para el girasol */
+.s5{
+  filter: saturate(.9) blur(.15px);
+  opacity: .22;
+}
