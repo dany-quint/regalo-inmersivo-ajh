@@ -359,3 +359,24 @@
   .sticker{ opacity: .12; }
   .s5{ opacity: .14; }
 }
+/* =========================
+   Scroll reveal (fade suave)
+   ========================= */
+
+.reveal{
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity .9s ease,
+    transform .9s ease;
+}
+
+.reveal.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* pequeño delay para cards */
+.reveal-delay{
+  transition-delay: .12s;
+}
