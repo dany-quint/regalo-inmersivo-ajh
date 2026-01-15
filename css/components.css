@@ -1,2 +1,92 @@
-.card { outline: 3px solid lime; }
+/* COMPONENTS — botones, tarjetas, tipografía de portada */
+
+.eyebrow{
+  opacity:.9;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  font-size:.85rem;
+  margin: 0 0 6px 0;
+}
+
+.title{
+  font-size: clamp(2.8rem, 6vw, 4.4rem);
+  margin: 0;
+  line-height: 1.02;
+}
+
+.subtitle{
+  max-width: 56ch;
+  opacity:.92;
+  margin: 10px 0 14px 0;
+  line-height: 1.55;
+}
+
+.hero-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+/* Botones */
+.btn{
+  padding: 12px 16px;
+  border-radius: 999px;
+  border:1px solid rgba(20,22,41,.18);
+  background: rgba(255,255,255,.55);
+  backdrop-filter: blur(14px);
+  cursor:pointer;
+  transition: transform .2s ease, background .2s ease, border-color .2s ease;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+
+.btn:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,.70);
+  border-color: rgba(20,22,41,.24);
+}
+
+.btn.primary{
+  background: linear-gradient(135deg, rgba(242,181,212,.75), rgba(205,183,246,.75));
+  border-color: rgba(20,22,41,.12);
+}
+
+.btn.ghost{
+  background: rgba(255,255,255,.35);
+}
+
+/* Tarjetas */
+.card{
+  padding: 18px;
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.46);
+  border:1px solid rgba(20,22,41,.14);
+  backdrop-filter: blur(16px);
+  box-shadow: var(--shadow);
+  transition: transform .22s ease, border-color .22s ease;
+}
+
+.card:hover{
+  transform: translateY(-6px);
+  border-color: rgba(20,22,41,.22);
+}
+
+.card h3{
+  margin: 8px 0 6px 0;
+  font-size: 1.1rem;
+}
+
+.card p{
+  margin: 0;
+  opacity: .85;
+  line-height: 1.55;
+}
+
+/* Chip */
+.chip{
+  display:inline-flex;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255
 
