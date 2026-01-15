@@ -14,3 +14,40 @@
   z-index:-1;
 }
 
+/* Adornos flotantes */
+.floating-decor{
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.float{
+  position: absolute;
+  opacity: .35;
+  animation: floaty 18s linear infinite;
+}
+
+.float.dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(205,183,246,.8);
+}
+
+.float.star{
+  font-size: 18px;
+  color: rgba(242,181,212,.8);
+}
+
+/* Posiciones iniciales */
+.float:nth-child(1){ left: 12%; top: 70%; animation-duration: 22s; }
+.float:nth-child(2){ left: 80%; top: 60%; animation-duration: 26s; }
+.float:nth-child(3){ left: 45%; top: 85%; animation-duration: 30s; }
+.float:nth-child(4){ left: 20%; top: 40%; animation-duration: 24s; }
+.float:nth-child(5){ left: 70%; top: 30%; animation-duration: 28s; }
+
+@keyframes floaty{
+  from{ transform: translateY(0); }
+  to{ transform: translateY(-120vh); }
+}
