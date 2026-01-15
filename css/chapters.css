@@ -1,1 +1,65 @@
+.chapter-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom: 14px;
+}
+
+.chapter-card{
+  padding: 22px;
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.18);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow);
+}
+
+.chapter-title{
+  margin: 10px 0 6px;
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  line-height: 1.05;
+}
+
+.chapter-subtitle{
+  margin: 0 0 14px 0;
+  opacity:.9;
+  max-width: 60ch;
+}
+
+.chapter-story p,
+.chapter-truth p{
+  opacity:.92;
+  line-height: 1.7;
+  max-width: 70ch;
+}
+
+.chapter-truth{
+  margin-top: 18px;
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(0,0,0,.14);
+  border:1px solid rgba(255,255,255,.14);
+}
+
+.chapter-wow{
+  margin-top: 18px;
+  display:flex;
+  flex-direction:column;
+  gap: 12px;
+}
+
+.letter{
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.18);
+}
+
+.chapter-actions{
+  display:flex;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap:wrap;
+}
 
