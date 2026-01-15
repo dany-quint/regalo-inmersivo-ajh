@@ -216,3 +216,74 @@
   from{ opacity: 1; transform: translateY(0) scale(1); }
   to  { opacity: 0; transform: translateY(-6px) scale(.98); }
 }
+/* ===== Journey (ruta del viaje) ===== */
+.journey{
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.46);
+  border: 1px solid rgba(20,22,41,.12);
+  backdrop-filter: blur(16px);
+  box-shadow: var(--shadow);
+  width: min(720px, 100%);
+}
+
+.journey-track{
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 10px;
+  align-items: center;
+  padding: 10px 10px 18px 10px;
+}
+
+.journey-track::before{
+  content:"";
+  position:absolute;
+  left: 16px;
+  right: 16px;
+  top: 50%;
+  height: 2px;
+  transform: translateY(-50%);
+  background: linear-gradient(90deg,
+    rgba(205,183,246,.65),
+    rgba(242,181,212,.65),
+    rgba(207,233,245,.65)
+  );
+  opacity: .7;
+}
+
+.journey-dot{
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size: .85rem;
+  background: rgba(255,255,255,.65);
+  border: 1px solid rgba(20,22,41,.12);
+  z-index: 1;
+}
+
+.journey-dot.is-done{
+  background: linear-gradient(135deg, rgba(242,181,212,.55), rgba(205,183,246,.55));
+}
+
+.journey-arrow{
+  position:absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  font-size: 18px;
+  opacity: .85;
+  filter: drop-shadow(0 10px 20px rgba(12,14,30,.18));
+  transition: left 1.2s ease;
+}
+
+.journey-label{
+  margin: 0;
+  padding: 0 10px 4px 10px;
+  opacity: .75;
+  font-size: .9rem;
+}
