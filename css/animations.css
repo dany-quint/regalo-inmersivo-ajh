@@ -47,10 +47,11 @@
 .float:nth-child(4){ left: 20%; top: 40%; animation-duration: 24s; }
 .float:nth-child(5){ left: 70%; top: 30%; animation-duration: 28s; }
 
-@keyframes floaty{
-  from{ transform: translateY(0); }
-  to{ transform: translateY(-120vh); }
+@keyframes driftY{
+  from{ transform: translate3d(0, 0, 0); }
+  to{ transform: translate3d(0, -160vh, 0); }
 }
+
 /* Stickers flotantes (suaves, optimizados, no interfieren) */
 .floating-stickers{
   position: fixed;
