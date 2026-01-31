@@ -393,3 +393,79 @@
   60%{ transform: translateY(-2px) scale(1.35); opacity: 1; }
   100%{ transform: translateY(0) scale(1); opacity: .9; }
 }
+
+/* ===== Gratitud (Cap 5) ===== */
+.thanks-grid{
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+@media (max-width: 860px){
+  .thanks-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 520px){
+  .thanks-grid{ grid-template-columns: 1fr; }
+}
+
+.thanks-card{
+  text-align: left;
+  padding: 14px 14px 16px;
+  border-radius: 20px;
+  background: rgba(255,255,255,.56);
+  border: 1px solid rgba(20,22,41,.10);
+  box-shadow: 0 18px 36px rgba(12,14,30,.06);
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+}
+
+.thanks-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 22px 44px rgba(12,14,30,.09);
+}
+
+.thanks-title{
+  display:block;
+  font-weight: 700;
+  opacity: .92;
+  margin-bottom: 6px;
+}
+
+.thanks-mini{
+  display:block;
+  opacity: .78;
+  line-height: 1.5;
+}
+
+.thanks-note{
+  margin-top: 14px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(242,181,212,.30), rgba(205,183,246,.28));
+  border: 1px solid rgba(20,22,41,.08);
+}
+
+.thanks-note-label{
+  margin: 0 0 6px 0;
+  font-size: .85rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  opacity: .7;
+}
+
+.thanks-note-text{
+  margin: 0;
+  line-height: 1.7;
+  opacity: .9;
+}
+
+.thanks-card.picked{
+  animation: thanksPop .28s ease-out both;
+}
+
+@keyframes thanksPop{
+  0%{ transform: translateY(0) scale(1); }
+  60%{ transform: translateY(-2px) scale(1.03); }
+  100%{ transform: translateY(0) scale(1); }
+}
