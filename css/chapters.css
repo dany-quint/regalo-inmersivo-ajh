@@ -287,3 +287,41 @@
   opacity: .75;
   font-size: .9rem;
 }
+
+/* ===== Breath (Respira) ===== */
+.breath-wrap{
+  margin-top: 14px;
+  padding: 18px;
+  border-radius: 22px;
+  background: rgba(255,255,255,.52);
+  border: 1px solid rgba(20,22,41,.10);
+  display:flex;
+  align-items:center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.breath-ring{
+  width: 96px;
+  height: 96px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%,
+    rgba(242,181,212,.55),
+    rgba(205,183,246,.45),
+    rgba(207,233,245,.35)
+  );
+  border: 1px solid rgba(20,22,41,.10);
+  box-shadow: 0 18px 40px rgba(12,14,30,.10);
+  transform: scale(1);
+  transition: transform 2.6s ease, filter 2.6s ease, opacity .3s ease;
+}
+
+.breath-text{
+  margin: 0;
+  opacity: .85;
+  font-size: 1rem;
+}
+
+.breath-ring.inhale{ transform: scale(1.18); filter: saturate(1.05); }
+.breath-ring.hold{ transform: scale(1.18); opacity: .95; }
+.breath-ring.exhale{ transform: scale(0.98); opacity: .9; }
