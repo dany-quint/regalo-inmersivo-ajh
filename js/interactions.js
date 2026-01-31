@@ -1,15 +1,17 @@
+// ===============================
+// Toggle carta (anti doble-disparo)
+// ===============================
 document.addEventListener("click", (e) => {
   const btn = e.target.closest("[data-open-letter]");
   if (!btn) return;
 
-  const card = btn.closest(".chapter-card");
-  const letter = card?.querySelector("[data-letter]");
-  if (!letter) return;
+  e.preventDefault();
+  e.stopPropagation();
 
-  const isHidden = letter.hasAttribute("hidden");
-  if (isHidden) letter.removeAttribute("hidden");
-  else letter.setAttribute("hidden", "");
-});
+  // bloqueo anti-doble ejecución
+  if (btn.dataset.lock === "1") return;
+  btn.dataset.lock = "1";
+  setTimeout(() => (btn.dataset.lock = "0"), 200);
 
   const section = btn.closest("section");
   const letter = section?.querySelector("[data-letter]");
