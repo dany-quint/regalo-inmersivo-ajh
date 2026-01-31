@@ -469,3 +469,66 @@
   60%{ transform: translateY(-2px) scale(1.03); }
   100%{ transform: translateY(0) scale(1); }
 }
+
+/* ===== Promesa flip (Cap 6) ===== */
+.promise-wrap{
+  margin-top: 14px;
+  display:flex;
+  justify-content:center;
+}
+
+.promise-card{
+  width: min(560px, 100%);
+  min-height: 190px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform .7s cubic-bezier(.2,.8,.2,1);
+  border-radius: 22px;
+  cursor: pointer;
+  outline: none;
+}
+
+.promise-card.is-flipped{
+  transform: rotateY(180deg);
+}
+
+.promise-face{
+  position:absolute;
+  inset: 0;
+  border-radius: 22px;
+  padding: 18px 18px 16px;
+  background: rgba(255,255,255,.58);
+  border: 1px solid rgba(20,22,41,.10);
+  box-shadow: 0 22px 48px rgba(12,14,30,.08);
+  backface-visibility: hidden;
+}
+
+.promise-front{
+  background: linear-gradient(135deg, rgba(242,181,212,.32), rgba(205,183,246,.28));
+}
+
+.promise-back{
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, rgba(207,233,245,.36), rgba(205,183,246,.26));
+}
+
+.promise-kicker{
+  margin: 0 0 10px 0;
+  font-size: .82rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  opacity: .7;
+}
+
+.promise-main{
+  margin: 0;
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+  font-weight: 800;
+  line-height: 1.35;
+  opacity: .92;
+}
+
+.promise-mini{
+  margin: 10px 0 0 0;
+  opacity: .75;
+}
