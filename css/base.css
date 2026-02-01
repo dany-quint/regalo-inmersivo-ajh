@@ -1,7 +1,7 @@
 :root{
   --ink:#141629;
   --radius:22px;
-  --shadow: 0 18px 60px rgba(12,14,30,.18);
+  --shadow: 0 18px 60px rgba(180, 120, 40, 0.18);
 }
 
 *{box-sizing:border-box}
