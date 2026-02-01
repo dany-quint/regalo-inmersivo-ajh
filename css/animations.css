@@ -1,10 +1,10 @@
 .bg-ambient{
   position:fixed; inset:0;
-  background:
-    radial-gradient(1100px 820px at 18% 20%, rgba(205,183,246,.65), transparent 60%),
-    radial-gradient(980px 720px at 78% 28%, rgba(242,181,212,.60), transparent 58%),
-    radial-gradient(900px 760px at 42% 90%, rgba(207,233,245,.60), transparent 58%),
-    linear-gradient(180deg, rgba(250,248,252,1), rgba(240,245,252,1));
+background:
+  radial-gradient(circle at 20% 30%, #fff3d6 0%, transparent 45%),
+  radial-gradient(circle at 80% 15%, #ffe0b2 0%, transparent 45%),
+  radial-gradient(circle at 50% 85%, #ffd180 0%, transparent 50%),
+  linear-gradient(180deg, #fffaf0 0%, #ffffff 45%, #fff3d6 100%);
   z-index:-2;
 }
 
