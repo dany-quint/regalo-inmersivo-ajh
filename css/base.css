@@ -1,6 +1,22 @@
 :root{
   --ink:#141629;
-  --radius:22px;
+
+  /* 🌻 Nueva paleta cálida */
+  --accent:#F4A261;      /* durazno/naranja */
+  --accent-2:#F6BD60;    /* amarillo suave */
+  --accent-soft:#FFE8C7; /* crema */
+  --accent-tint:rgba(244,162,97,.18);
+
+  /* Fondos */
+  --bg1:#FFF7E6;   /* blanco cálido */
+  --bg2:#FFE4B5;   /* durazno claro */
+  --bg3:#FFD9A0;   /* amarillo pastel */
+
+  /* UI */
+  --card:rgba(255,255,255,.72);
+  --stroke:rgba(20,22,41,.10);
+
+  /* sombra más cálida */
   --shadow: 0 18px 60px rgba(180, 120, 40, 0.18);
 }
 
