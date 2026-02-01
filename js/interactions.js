@@ -29,3 +29,26 @@ document.addEventListener("click", (e) => {
     setTimeout(() => letter.setAttribute("hidden", ""), 240);
   }
 });
+
+// ===============================
+// Música de fondo ON / OFF
+// ===============================
+const musicBtn = document.getElementById("musicToggle");
+const bgMusic = document.getElementById("bgMusic");
+
+if (musicBtn && bgMusic) {
+  let isPlaying = false;
+
+  musicBtn.addEventListener("click", () => {
+    if (!isPlaying) {
+      bgMusic.volume = 0.4; // volumen suave
+      bgMusic.play();
+      musicBtn.textContent = "Música: ON";
+      isPlaying = true;
+    } else {
+      bgMusic.pause();
+      musicBtn.textContent = "Música: OFF";
+      isPlaying = false;
+    }
+  });
+}
