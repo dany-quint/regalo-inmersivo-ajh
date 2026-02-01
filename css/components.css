@@ -48,12 +48,22 @@
 }
 
 .btn.primary{
-  background: linear-gradient(135deg, rgba(242,181,212,.75), rgba(205,183,246,.75));
-  border-color: rgba(20,22,41,.12);
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: var(--ink);
+  border: 1px solid rgba(20,22,41,.08);
+  box-shadow: var(--shadow);
 }
 
 .btn.ghost{
-  background: rgba(255,255,255,.35);
+  background: rgba(255,255,255,.55);
+  border: 1px solid var(--stroke);
+  color: var(--ink);
+}
+
+.chapter-pill{
+  background: rgba(255,255,255,.55);
+  border: 1px solid var(--stroke);
+  color: var(--ink);
 }
 
 /* Tarjetas */
