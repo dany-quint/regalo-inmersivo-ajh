@@ -30,25 +30,29 @@ document.addEventListener("click", (e) => {
   }
 });
 
-// ===============================
-// Música de fondo ON / OFF
-// ===============================
-const musicBtn = document.getElementById("musicToggle");
-const bgMusic = document.getElementById("bgMusic");
+document.addEventListener("DOMContentLoaded", () => {
+  const musicBtn = document.getElementById("musicToggle");
+  const bgMusic = document.getElementById("bgMusic");
 
-if (musicBtn && bgMusic) {
+  if (!musicBtn || !bgMusic) return;
+
   let isPlaying = false;
 
-  musicBtn.addEventListener("click", () => {
-    if (!isPlaying) {
-      bgMusic.volume = 0.4; // volumen suave
-      bgMusic.play();
-      musicBtn.textContent = "Música: ON";
-      isPlaying = true;
-    } else {
-      bgMusic.pause();
-      musicBtn.textContent = "Música: OFF";
-      isPlaying = false;
+  musicBtn.addEventListener("click", async () => {
+    try {
+      if (!isPlaying) {
+        bgMusic.volume = 0.4;
+        await bgMusic.play(); // importante: await + try/catch
+        musicBtn.textContent = "Música: ON";
+        isPlaying = true;
+      } else {
+        bgMusic.pause();
+        musicBtn.textContent = "Música: OFF";
+        isPlaying = false;
+      }
+    } catch (err) {
+      console.error("No se pudo reproducir:", err);
+      alert("No se pudo reproducir la música. Revisa si el archivo existe y si estás en HTTPS (GitHub Pages).");
     }
   });
-}
+});
