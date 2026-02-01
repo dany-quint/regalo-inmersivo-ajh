@@ -34,25 +34,70 @@ document.addEventListener("DOMContentLoaded", () => {
   const musicBtn = document.getElementById("musicToggle");
   const bgMusic = document.getElementById("bgMusic");
 
-  if (!musicBtn || !bgMusic) return;
+  if (!bgMusic) return;
 
-  let isPlaying = false;
+  const KEY_ON = "ebenezer_music_on";
+  const KEY_TIME = "ebenezer_music_time";
 
-  musicBtn.addEventListener("click", async () => {
-    try {
-      if (!isPlaying) {
-        bgMusic.volume = 0.4;
-        await bgMusic.play(); // importante: await + try/catch
-        musicBtn.textContent = "Música: ON";
-        isPlaying = true;
-      } else {
-        bgMusic.pause();
-        musicBtn.textContent = "Música: OFF";
-        isPlaying = false;
-      }
-    } catch (err) {
-      console.error("No se pudo reproducir:", err);
-      alert("No se pudo reproducir la música. Revisa si el archivo existe y si estás en HTTPS (GitHub Pages).");
+  // Helper: actualizar texto del botón si existe
+  function setBtnLabel(on) {
+    if (!musicBtn) return;
+    musicBtn.textContent = on ? "Música: ON" : "Música: OFF";
+  }
+
+  // Intentar reanudar si estaba ON
+  const wasOn = localStorage.getItem(KEY_ON) === "1";
+  if (wasOn) {
+    const savedTime = parseFloat(localStorage.getItem(KEY_TIME) || "0");
+    if (!Number.isNaN(savedTime)) bgMusic.currentTime = savedTime;
+
+    bgMusic.volume = 0.4;
+
+    // Reanudar (algunos navegadores requieren 1 click si no hubo interacción antes,
+    // pero como el usuario ya activó música en la portada, normalmente sí reanuda)
+    bgMusic.play().then(() => {
+      setBtnLabel(true);
+    }).catch(() => {
+      // Si el navegador bloquea, dejamos el botón en OFF para que el usuario lo active
+      setBtnLabel(false);
+      localStorage.setItem(KEY_ON, "0");
+    });
+  } else {
+    setBtnLabel(false);
+  }
+
+  // Guardar tiempo cada cierto rato
+  setInterval(() => {
+    if (!bgMusic.paused) {
+      localStorage.setItem(KEY_TIME, String(bgMusic.currentTime));
     }
+  }, 800);
+
+  // Click del botón ON/OFF
+  if (musicBtn) {
+    musicBtn.addEventListener("click", async () => {
+      const isPlaying = !bgMusic.paused;
+
+      try {
+        if (!isPlaying) {
+          bgMusic.volume = 0.4;
+          await bgMusic.play();
+          localStorage.setItem(KEY_ON, "1");
+          setBtnLabel(true);
+        } else {
+          bgMusic.pause();
+          localStorage.setItem(KEY_ON, "0");
+          setBtnLabel(false);
+        }
+      } catch (err) {
+        console.error("No se pudo reproducir:", err);
+        alert("No se pudo reproducir la música. Revisa si el archivo existe.");
+      }
+    });
+  }
+
+  // Antes de salir de la página, guarda el tiempo
+  window.addEventListener("beforeunload", () => {
+    localStorage.setItem(KEY_TIME, String(bgMusic.currentTime || 0));
   });
 });
