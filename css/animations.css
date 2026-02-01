@@ -1,10 +1,10 @@
 .bg-ambient{
   position:fixed; inset:0;
 background:
-  radial-gradient(circle at 20% 30%, #fff3d6 0%, transparent 45%),
-  radial-gradient(circle at 80% 15%, #ffe0b2 0%, transparent 45%),
-  radial-gradient(circle at 50% 85%, #ffd180 0%, transparent 50%),
-  linear-gradient(180deg, #fffaf0 0%, #ffffff 45%, #fff3d6 100%);
+  radial-gradient(circle at 20% 30%, #fff6df 0%, transparent 50%),
+  radial-gradient(circle at 80% 15%, #ffe8c9 0%, transparent 50%),
+  radial-gradient(circle at 50% 90%, #ffeccf 0%, transparent 55%),
+  linear-gradient(180deg, #fffaf4 0%, #ffffff 50%, #fff6df 100%);
   z-index:-2;
 }
 
